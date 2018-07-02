@@ -27,7 +27,7 @@ $msg .= "User IP : ".$_SERVER["REMOTE_ADDR"]."\r\n";
 $msg .= "Browser info : ".$_SERVER["HTTP_USER_AGENT"]."\r\n"; 
 $msg .= "User come from : ".$_SERVER["SERVER_NAME"];
 
-$recipient = "me@mail.com";// Change the recipient email adress to your adrees  
+$recipient = "jagnoor@gmail.com";// Change the recipient email adress to your adrees  
 $sujet =  "Sender information";// This is subject you can change it
 $mailheaders = "From: $email\r\nReply-To: $email\r\nReturn-Path: $email\r\n";
 
