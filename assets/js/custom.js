@@ -12,30 +12,29 @@ $(function () {
 /*=========== TABLE OF CONTENTS ===========
 
     01. Isotope Plugin
-    02. Preloader
-    03. window height
-    04. Navbar
-    05. Smooth Scroll
-    06. MagnifPopup Plugin
-    07. owl.carousel plugin
-    08. Form Validation
-    09. Window Scroll
-    10. Window Resize
-    11. FitText Plugin
-    12. typed Plugin
-    13. Jquery.mb.YTPlayer Plugin
+    02. window height
+    03. Navbar
+    04. Smooth Scroll
+    05. MagnifPopup Plugin
+    06. owl.carousel plugin
+    07. Form Validation
+    08. Window Scroll
+    09. Window Resize
+    10. FitText Plugin
+    11. typed Plugin
+    12. Jquery.mb.YTPlayer Plugin
+    13. Preloader
 
 ======================================*/
-
 
     var $grid = $('.grid'),
         i;
 
+    /*--------------------------------
+        01. Isotope Plugin
+    ----------------------------------*/
     $(window).on('load', function () {
 
-        /*--------------------------------
-            01. Isotope Plugin
-        ----------------------------------*/
         $grid.isotope({
           // options...
             itemSelector: '.grid-item',
@@ -52,21 +51,16 @@ $(function () {
             $(this).addClass("active_filter").siblings().removeClass("active_filter");
         });
         
-        /*--------------------------------
-            02. Preloader
-        ----------------------------------*/
-        $('.startLoad').fadeOut('slow');
-        
-    });//--- window(load) ---//
+    });
+
     
     /*----------------------------------------------
-        03. window height
+        02. window height
     -----------------------------------------------*/
-
         $(".full_height").height($(window).height());
 
     /*--------------------------------
-        04. Navbar
+        03. Navbar
     ----------------------------------*/
     //-- navbar mobile menu --//
     $("nav .navbar-nav li a").on('click', function () {
@@ -86,7 +80,7 @@ $(function () {
     nav__scroll();
     
     /*--------------------------------
-        05. Smooth Scroll
+        04. Smooth Scroll
     ----------------------------------*/
     $(".smooth_scroll").on('click', function (event) {
 
@@ -107,7 +101,7 @@ $(function () {
     });
 
     /*--------------------------------
-       06. MagnifPopup Plugin
+       05. MagnifPopup Plugin
     ----------------------------------*/
     var my_img = '.my_img',
         magnifPopup = function () {
@@ -139,7 +133,7 @@ $(function () {
     });
 
     /*----------------------------------------
-        07. owl.carousel plugin
+        06. owl.carousel plugin
     ------------------------------------------*/
     $("#testimonial-carousel").owlCarousel({
         items: 1,
@@ -155,7 +149,7 @@ $(function () {
     });
 
     /*--------------------------------
-        08. Form Validation
+        07. Form Validation
     ----------------------------------*/
     $('.contact form .submit').on('click', function () {
         $('.contact form .form-control').removeClass("errorForm");
@@ -215,7 +209,7 @@ $(function () {
     });
 
     /*--------------------------------
-        09. Window Scroll
+        08. Window Scroll
     ----------------------------------*/
     $(window).on("scroll", function () {
 
@@ -228,9 +222,10 @@ $(function () {
         nav__scroll();
         
         //-- Scroll top --//
-        var scrollTop = $(".top");
+        var scrollTop = $(".top"),
+            pageloading = ".pageloading";
         if (scrollTop.length !== 0) {
-            if ($(window).scrollTop() >= $(".about").offset().top) {
+            if ($(window).scrollTop() >= $(".about").offset().top && $(pageloading).length) {
                 scrollTop.addClass("scroll_top_show");
             } else {
                 scrollTop.removeClass("scroll_top_show");
@@ -240,7 +235,7 @@ $(function () {
     });
 
     /*--------------------------------
-        10. Window Resize
+        09. Window Resize
     ----------------------------------*/
     $(window).on("resize", function () {
 
@@ -249,7 +244,7 @@ $(function () {
     });
 
     /*--------------------------------
-        11. FitText Plugin
+        10. FitText Plugin
     ----------------------------------*/ 
     var home__h1 = ".home h1";
 
@@ -264,9 +259,8 @@ $(function () {
     }
 
     /*--------------------------------
-        12. typed Plugin
+        11. typed Plugin
     ----------------------------------*/ 
-    
     if ($("#typed").length){
 
         var typed = new Typed("#typed", {
@@ -274,7 +268,7 @@ $(function () {
             typeSpeed: 40,
             backSpeed: 0,
             backDelay: 1500,
-            startDelay: 1000,
+            startDelay: 0,
             fadeOut: false,
             loop: true
         });
@@ -282,7 +276,7 @@ $(function () {
     }
 
     /*--------------------------------
-        13. Jquery.mb.YTPlayer Plugin
+        12. Jquery.mb.YTPlayer Plugin
     ----------------------------------*/ 
     if ($("#bgndVideo").length){
 
@@ -295,6 +289,14 @@ $(function () {
 
     }
 
+    /*--------------------------------
+        13. Preloader
+    ----------------------------------*/
+    $(window).on('load', function () {
+
+        $('.startLoad').fadeOut('slow');
+        
+    });
 
 
 });

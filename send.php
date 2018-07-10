@@ -5,6 +5,8 @@ $message = $_POST['message'];
 $error = "";
 $errorMessage = 'Sorry your message can not be sent.';
 
+var_dump($errorMessage):
+
 //Validate first
 if(empty($name)||empty($email)||empty($message)) 
 {
