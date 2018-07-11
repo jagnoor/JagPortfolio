@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/jagnoor/JagPortfolio#readme",
   "dependencies": {
-    "nodemailer": "^4.6.7"
+    "nodemailer": "^4.6.7",
+    "sortedlist": "^0.3.1"
   }
 }
